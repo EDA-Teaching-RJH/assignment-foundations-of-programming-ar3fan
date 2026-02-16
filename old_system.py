@@ -74,10 +74,10 @@ def run_system_monolith():
         else:
             print("System Failure")
 
-        if len(n) > 0:
-            print("Database has entries.")
-        else:
-            print("Database empty.")
+        if len(n) != 0:
+    print("Database has entries.")
+else:
+    print("Database empty.")
 
         fuel = 100
         consumption = 0
