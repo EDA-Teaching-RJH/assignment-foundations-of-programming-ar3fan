@@ -15,6 +15,7 @@ def run_system_monolith():
         print("Loading module " + str(loading))
         loading += 1
 
+    # Menu loop (stray blocking loop removed so menu is reachable)
     while True:
         print("\n--- MENU ---")
         print("1. View Crew")
@@ -25,26 +26,26 @@ def run_system_monolith():
 
         opt = input("Select option: ").strip()
 
-        if opt.strip() == "1":
+        if opt == "1":
             print("Current Crew List:")
             limit = min(len(n), len(r))
             for i in range(limit):
                 print(n[i] + " - " + r[i])
 
         elif opt == "2":
-    new_name = input("Name: ")
-    new_rank = input("Rank: ")
-    new_div = input("Division: ")
+            new_name = input("Name: ")
+            new_rank = input("Rank: ")
+            new_div = input("Division: ")
 
-    # Keep lists aligned (name/rank/division)
-    n.append(new_name)
-    r.append(new_rank)
-    d.append(new_div)
+            # Keep lists aligned (name/rank/division)
+            n.append(new_name)
+            r.append(new_rank)
+            d.append(new_div)
 
-    print("Crew member added.")
+            print("Crew member added.")
 
         elif opt == "3":
-    rem = input("Name to remove: ").strip()
+            rem = input("Name to remove: ").strip()
             if rem in n:
                 idx = n.index(rem)
                 n.pop(idx)
@@ -75,9 +76,9 @@ def run_system_monolith():
             print("System Failure")
 
         if len(n) != 0:
-    print("Database has entries.")
-else:
-    print("Database empty.")
+            print("Database has entries.")
+        else:
+            print("Database empty.")
 
         fuel = 100
         consumption = 0
