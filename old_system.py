@@ -25,7 +25,7 @@ def run_system_monolith():
 
         opt = input("Select option: ")
 
-        if opt == "1":
+        if opt.strip() == "1":
             print("Current Crew List:")
             limit = min(len(n), len(r), len(d))
             for i in range(limit):
