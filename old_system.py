@@ -27,7 +27,7 @@ def run_system_monolith():
 
         if opt.strip() == "1":
             print("Current Crew List:")
-            limit = min(len(n), len(r), len(d))
+            limit = min(len(n), len(r))
             for i in range(limit):
                 print(n[i] + " - " + r[i])
 
